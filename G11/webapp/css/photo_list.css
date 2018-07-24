@@ -1,0 +1,275 @@
+input[type="checkbox"]{
+	position: relative;
+	width: 22px;
+	height: 22px;
+}
+input[type="checkbox"]::before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	content:'';
+	background-color: white;
+	border: 1px solid forestgreen;
+	line-height: 22px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 2px;
+}
+input[type="checkbox"]:checked::before{
+	background-color: forestgreen;
+	color: white;
+	content: '\2714';
+}
+
+#album{
+	padding: 30px 0;
+	height: 84px;
+}
+/*#album-content{
+	height: 84px;
+	width: 84px;
+	margin-right: 15px;
+	position: relative;
+}*/
+#album-img{
+	height: 76px;
+	width: 76px;
+	border: 4px solid white;
+	margin-right: 15px;
+}
+#album-name{
+	color: white;
+	font-weight: 300;
+}
+#album-name i{
+	color: grey;
+	margin-left: 5px;
+}
+#album-name i:hover{
+	color: white;
+}
+#plgl-photo,#add-photo{
+	margin: 18px 10px 0 0;
+	float: left;
+	height: 35px;
+	padding: 0 20px;
+	font-size: 16px;
+	color: #fff;
+	border: none;
+    background-color: #808080;
+    border-radius: 2px;
+}
+#plgl-photo{
+	background-color: #262626;
+	color: #a6a6a6;
+}
+#add-photo:hover{
+	background-color: darkgrey;
+}
+#plgl-photo:hover{
+	background-color: grey;
+	color: #fff;
+}
+
+#szfm-content .modal-content{
+	top: 40%;
+	padding: 15px 20px 15px 20px;
+}
+#szfm-content p{
+	color: forestgreen;
+}
+#szfm-content p i{
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+#photo-add>div{
+	width: 900px;
+	top: 10%;
+}
+#photo-select{
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#photo-select .btn{
+	width: 200px;
+	margin: 0;
+	margin-right: 10px;
+}
+
+#plgl{
+	height: 34px;
+	background-color: rgba(0, 0, 0, 0.87);
+	margin-bottom: 20px;
+	padding: 13px 0;
+	position: relative;
+}
+#plgl input,#plgl p{
+	float: left;
+	margin-right: 6px;
+	line-height: 34px;
+}
+#plgl input{
+	margin-top: 7px;
+}
+#plgl p{
+	color: white;
+}
+#yd-btn,#bj-btn,#sc-btn,#wc-btn{
+	height: 34px;
+	background-color: white;
+	border-radius: 2px;
+	padding: 0 20px;
+	margin-left: 15px;
+	border: 2px solid forestgreen;
+	color: forestgreen;
+}
+#yd-btn{
+	margin-left: 330px;
+}
+#wc-btn{
+	float: right;
+	background-color: #3E8F3E;
+	color: white;
+}
+#yd-btn:hover,#bj-btn:hover,#sc-btn:hover,#wc-btn:hover{
+	background-color: forestgreen;
+	color: white;
+}
+
+#photo{
+	width: 1116px;
+	margin: 0 auto;
+}
+#photo li{
+   	width: 170px;
+	height: 170px;
+    margin: 0 8px 30px 8px;
+    float: left;
+    background-color: white;
+}
+#photo li p{
+	color: black;
+	text-align: center;
+	height: 24px;
+	width: 100%;
+	line-height: 24px;
+	background-color: #fff;
+}
+.photo-modal{
+	position: relative;
+	height: 146px;
+}
+.photo-modal img{
+	width: 170px;
+	height: 146px;
+}
+.photo-modal input{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.photo-div{
+	position: absolute;
+	bottom: -30px;
+	width: 170px;
+	height: 54px;
+}
+.photo-div button{
+	width: 42.5px;
+	height: 30px;
+	float: left;
+	border: none;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+}
+ #szfm{
+	width: 170px;
+	height: 24px;
+}
+.photo-div button:hover{
+	background-color: #e9cb5b;
+}
+
+#del-photo .btn{
+	width: 120px;
+}
+#qdbtn{
+	margin-right: 15px;
+}
+
+#share-photo .modal-content{
+	width: 400px;
+}
+#share-photo p{
+	color: forestgreen;
+}
+#share-photo p i{
+	font-size: 18px;
+}
+#share-photo input{
+	height: 23px;
+	width: 280px;
+	margin-bottom: 5px;
+}
+#share-photo button{
+	margin: 5px 0;
+	float: left;
+	width: 100px;
+}
+
+#fd-photo .modal-content{
+	background-color: #000000;
+	top: 4%;
+	border: 0;
+	height: 550px;
+	width: 900px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+#fd-photo .close:hover{
+	color: white;
+}
+.fd-img{
+	width: 700px;
+	height: 550px;
+	margin-left: 100px;
+}
+.fd-img div{
+	height: 490px;
+	width: 700px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.fd-img img{
+	max-width: 700px;
+	max-height: 490px;
+	width: auto;
+	height: auto;
+}
+.fd-img p{
+	color: white;
+	position: absolute;
+	bottom: 15px;
+	height: 60px;
+	width: 700px;
+}
+#fd-photo i{
+	position: absolute;
+	top: 250px;
+	font-size: 38px;
+	color: #aaa;
+}
+.icon-back{
+	left: 60px;
+}
+.icon-right{
+	right: 60px;
+}
+#fd-photo i:hover{
+	color: white;
+}

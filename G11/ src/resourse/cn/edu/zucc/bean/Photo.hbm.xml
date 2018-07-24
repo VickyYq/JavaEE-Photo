@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.edu.zucc.bean.Photo" table="photo" schema="photo">
+        <id name="photoid" column="photoid"/>
+        <property name="photodetail" column="photodetail"/>
+        <property name="photocreatdate" column="photocreatdate"/>
+        <property name="photourl" column="photourl"/>
+        <property name="exphoto" column="exphoto"/>
+        <property name="size" column="size"/>
+        <many-to-one name="photoalbumByPaid" class="cn.edu.zucc.bean.Photoalbum">
+            <column name="paid"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

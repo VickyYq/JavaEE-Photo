@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+ http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+>
+    <context:component-scan base-package="cn.edu.zucc.controller"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--<property name="prefix" value="/webapp/"></property>-->
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <bean id="dataSource" class ="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/photo?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"/>
+        <property name="user" value="root"/>
+        <property name="password" value="123456"/>
+        <property name="testConnectionOnCheckout" value="false"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!-- 配置hibernate属性 -->
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocations" value="classpath:hibernate.cfg.xml"/>
+    </bean>
+
+    <bean name="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
+    <bean id="userDao" class="cn.edu.zucc.dao.UserDao"/>
+    <bean id="photoDao" class="cn.edu.zucc.dao.PhotoDao"/>
+    <bean id="photoalbumDao" class="cn.edu.zucc.dao.PhotoalbumDao"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="allIDaoMethod" expression="execution(* cn.edu.zucc..*IDao.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="allIDaoMethod"/>
+    </aop:config>
+
+
+</beans>

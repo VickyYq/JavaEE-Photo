@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.edu.zucc.bean.Photoalbum" table="photoalbum" schema="photo">
+        <id name="paid" column="paid"/>
+        <property name="paname" column="paname"/>
+        <property name="padetail" column="padetail"/>
+        <property name="palimit" column="palimit"/>
+        <property name="pacreatedate" column="pacreatedate"/>
+        <property name="paurl" column="paurl"/>
+        <property name="count" column="count"/>
+        <many-to-one name="userByUserid" class="cn.edu.zucc.bean.User">
+            <column name="userid" not-null="true"/>
+        </many-to-one>
+        <set name="photosByPaid" inverse="true">
+            <key>
+                <column name="paid"/>
+            </key>
+            <one-to-many not-found="ignore" class="cn.edu.zucc.bean.Photo"/>
+        </set>
+    </class>
+</hibernate-mapping>

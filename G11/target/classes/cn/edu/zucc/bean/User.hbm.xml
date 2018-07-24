@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.edu.zucc.bean.User" table="user" schema="photo">
+        <id name="userid" column="userid"/>
+        <property name="userpwd" column="userpwd"/>
+        <property name="username" column="username"/>
+        <property name="usercapacity" column="usercapacity"/>
+        <property name="email" column="email"/>
+        <set name="photoalbumsByUserid" inverse="true">
+            <key>
+                <column name="userid" not-null="true"/>
+            </key>
+            <one-to-many not-found="ignore" class="cn.edu.zucc.bean.Photoalbum"/>
+        </set>
+    </class>
+</hibernate-mapping>

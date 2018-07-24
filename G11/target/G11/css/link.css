@@ -1,0 +1,78 @@
+#nav{
+	height: 60px;
+}
+#logo img{
+	margin: 12px 5px 12px 0;
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+	float: left;
+}
+#logo h1{
+	color: white;
+	font-size: 24px;
+	font-weight: 300;
+	float: left;
+	line-height: 60px;
+}
+
+#link{
+	background-color: white;
+	border: 1px solid green;
+	border-right: none;
+	height: 500px;
+	width: 728px;
+	padding: 20px;
+	margin: 0;
+	float: left;
+	border-radius: 0;
+}
+#link img{
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;
+}
+#link p{
+	line-height: 60px;
+	font-size: 1.2em;
+	float: left;
+}
+#link button{
+	float: right;
+	height: 34px;
+	padding: 0 20px;
+	margin-left: 10px;
+	border: 1px solid forestgreen;
+	background-color: white;
+	color: forestgreen;
+	border-radius: 2px;
+}
+#link button i{
+	margin-right: 5px;
+}
+#link button:hover{
+	background-color: white;
+	color: forestgreen;
+}
+
+#user{
+	background-color: #dcd2d1;
+	border: 1px solid green;
+	border-left: none;
+	height: 500px;
+	width: 290px;
+	padding: 20px;
+	float: left;
+}
+#user img{
+	height: 60px;
+	width: 60px;
+	margin-right: 10px;
+	float: left;
+}
+#user p{
+	line-height: 60px;
+	font-size: 1.2em;
+	float: left;
+}
